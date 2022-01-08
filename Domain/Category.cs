@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    internal class Category
+    public class Category
     {
         [Key]
         public int Id { get; set; }
