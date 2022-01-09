@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
-#pragma warning disable CS8603
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly ApplicationDbContext _context;
