@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence
         {
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,6 @@ namespace Infrastructure.Persistence
 
         private static void ConfigureCategory(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<Category>().Property(x => x.Name).HasMaxLength(55);
         }
 
