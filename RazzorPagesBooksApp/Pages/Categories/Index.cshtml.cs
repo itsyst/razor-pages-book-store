@@ -1,13 +1,13 @@
-using Domain;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Application.Interfaces;
+using Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RazzorPagesBooksApp.Pages.Categories
 {
-#pragma warning disable CS1998
     public class IndexModel : PageModel
     {
-         private readonly IUnitOfWork<Category> _category;
+        private readonly IUnitOfWork<Category> _category;
 
         public IndexModel(IUnitOfWork<Category> category)
         {
@@ -17,10 +17,9 @@ namespace RazzorPagesBooksApp.Pages.Categories
         public IList<Category> Category { get; set; }
 
 
-        public Task OnGet()
+        public void OnGet()
         {
             Category = _category.Entity.GetAll().ToList();
         }
-        
     }
 }
