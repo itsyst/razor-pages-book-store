@@ -25,7 +25,7 @@ namespace RazzorPagesBooksApp.Pages.Categories
         {
             if(Category.Name == Category.Order.ToString())
             {
-                ModelState.AddModelError(string.Empty, "The Order cannot much the Name.")
+                ModelState.AddModelError(string.Empty, "The Order cannot much the Name.");
             }
 
             if (!ModelState.IsValid)
