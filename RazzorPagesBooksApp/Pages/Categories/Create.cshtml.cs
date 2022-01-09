@@ -23,6 +23,11 @@ namespace RazzorPagesBooksApp.Pages.Categories
 
         public IActionResult OnPost()
         {
+            if(Category.Name == Category.Order.ToString())
+            {
+                ModelState.AddModelError(string.Empty, "The Order cannot much the Name.")
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -30,7 +35,7 @@ namespace RazzorPagesBooksApp.Pages.Categories
 
             _category.Entity.Insert(Category);
             _category.Save();
-            return RedirectToPage("Index");
+            return RedirectToPage("./Index");
         }
     }
 }
